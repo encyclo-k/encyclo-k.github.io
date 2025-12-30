@@ -68,14 +68,20 @@ Place your pipeline diagram at `public/pipeline.png`
 
 项目已配置 GitHub Actions 工作流，可以自动部署到 GitHub Pages。
 
-#### 首次设置步骤：
+#### 首次设置步骤（重要！必须按顺序执行）：
 
-1. **启用 GitHub Pages**：
-   - 前往仓库的 `Settings` → `Pages`
-   - 在 `Source` 部分，选择 `GitHub Actions` 作为部署源
-   - 保存设置
+**⚠️ 重要提示：必须先启用 GitHub Pages，再推送代码，否则工作流会失败！**
 
-2. **推送代码**：
+1. **首先启用 GitHub Pages**（在推送代码之前）：
+   - 前往 GitHub 仓库页面
+   - 点击 `Settings`（设置）
+   - 在左侧菜单中找到 `Pages`
+   - 在 `Build and deployment` 部分：
+     - `Source` 选择 `GitHub Actions`
+     - 如果看不到 `GitHub Actions` 选项，先选择 `Deploy from a branch`，然后改回 `GitHub Actions`
+   - 保存设置（不需要等待部署，因为还没有工作流运行）
+
+2. **推送代码到 GitHub**：
    ```bash
    git add .
    git commit -m "Configure GitHub Pages deployment"
@@ -84,7 +90,19 @@ Place your pipeline diagram at `public/pipeline.png`
 
 3. **等待部署完成**：
    - 在仓库的 `Actions` 标签页查看部署进度
+   - 如果看到 "Get Pages site failed" 错误，说明 Pages 还没有启用，请返回步骤 1
    - 部署成功后，页面将在几分钟内可通过 `https://encyclo-k.github.io` 访问
+
+#### 故障排除：
+
+**如果遇到 "Get Pages site failed" 或 "HttpError: Not Found" 错误：**
+- 确保已经在 `Settings` → `Pages` 中启用了 Pages
+- 确保选择了 `GitHub Actions` 作为部署源
+- 如果仍然失败，尝试：
+  1. 在 `Settings` → `Pages` 中，先选择 `Deploy from a branch`
+  2. 选择任意分支（如 `main`），保存
+  3. 然后再改回 `GitHub Actions`，保存
+  4. 重新运行失败的 Actions 工作流（点击 "Re-run jobs"）
 
 #### 后续更新：
 
