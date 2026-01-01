@@ -1,6 +1,6 @@
 <script setup>
 import { NIcon } from 'naive-ui'
-import { LogoGithub, Heart } from '@vicons/ionicons5'
+import { Heart } from '@vicons/ionicons5'
 </script>
 
 <template>
@@ -14,15 +14,6 @@ import { LogoGithub, Heart } from '@vicons/ionicons5'
           </p>
         </div>
 
-        <div class="footer-links">
-          <a href="#" class="footer-link">
-            <NIcon :component="LogoGithub" :size="20" />
-            GitHub
-          </a>
-          <a href="#" class="footer-link">ArXiv</a>
-          <a href="#" class="footer-link">HuggingFace</a>
-          <a href="#leaderboard" class="footer-link">Leaderboard</a>
-        </div>
 
         <div class="footer-orgs">
           <span class="org-label">Contributors:</span>
@@ -74,25 +65,6 @@ import { LogoGithub, Heart } from '@vicons/ionicons5'
   color: var(--text-muted);
 }
 
-.footer-links {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-.footer-link:hover {
-  color: var(--text-primary);
-}
 
 .footer-orgs {
   display: flex;

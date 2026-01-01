@@ -1,7 +1,6 @@
 <script setup>
 import { NButton, NSpace, NIcon } from 'naive-ui'
 import { 
-  LogoGithub, 
   DocumentText, 
   Trophy, 
   Cloud 
@@ -10,26 +9,26 @@ import {
 const links = [
   { 
     label: 'Code', 
-    icon: LogoGithub, 
-    url: 'https://github.com/your-repo/Encyclo-K',
+    icon: Cloud, 
+    url: 'https://github.com/multimodal-art-projection/Encyclo-K',
     type: 'default'
   },
   { 
     label: 'Dataset', 
     icon: Cloud, 
-    url: 'https://huggingface.co/datasets/your-dataset',
+    url: 'https://huggingface.co/datasets/m-a-p/Encyclo-K',
     type: 'default'
   },
   { 
     label: 'Leaderboard', 
     icon: Trophy, 
-    url: '#leaderboard',
+    url: 'https://encyclo-k.github.io/#:~:text=isolated%20factual%20recall.-,Leaderboard,-We%20evaluate%2050',
     type: 'primary'
   },
   { 
     label: 'ArXiv', 
     icon: DocumentText, 
-    url: 'https://arxiv.org/abs/xxxx.xxxxx',
+    url: 'https://arxiv.org/abs/2512.24867',
     type: 'default'
   },
 ]
@@ -138,10 +137,12 @@ const organizations = [
 }
 
 .hero-content {
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1200px;
   text-align: center;
   position: relative;
   z-index: 1;
+  padding: 0 24px;
 }
 
 /* Decorative Orbs */
@@ -278,11 +279,14 @@ const organizations = [
   gap: 48px;
   flex-wrap: wrap;
   padding: 40px 64px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-md);
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  border-radius: 0;
+  backdrop-filter: none;
+  box-shadow: none;
+  margin-top: 40px;
+  padding-top: 48px;
 }
 
 .stat-item {

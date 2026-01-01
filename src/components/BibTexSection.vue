@@ -6,14 +6,11 @@ import { Copy, Checkmark } from '@vicons/ionicons5'
 const message = useMessage()
 const copied = ref(false)
 
-const bibtex = `@misc{encyclo-k2025,
-    title={Encyclo-K: Dynamic Evaluation of LLMs' Comprehensive Understanding over Multiple Knowledge Statements},
-    author={Yiming Liang and Yizhi Li and Ge Zhang and Yuchen Wu and Yinzhu Piao and Denghui Cao and Tong Sun and Ziniu Li and Li Du and Bo Lei and Jiaheng Liu and Chenghua Lin and Zhaoxiang Zhang and Yantao Du and Wenhao Huang and Jiajun Zhang},
-    year={2025},
-    eprint={},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL},
-    url={}, 
+const bibtex = `@article{liang2025encyclo0k0,
+  title   = {Encyclo-K: Evaluating LLMs with Dynamically Composed Knowledge Statements},
+  author  = {Yiming Liang and Yizhi Li and Yantao Du and Ge Zhang and Jiayi Zhou and Yuchen Wu and Yinzhu Piao and Denghui Cao and Tong Sun and Ziniu Li and Li Du and Bo Lei and Jiaheng Liu and Chenghua Lin and Zhaoxiang Zhang and Wenhao Huang and Jiajun Zhang},
+  year    = {2025},
+  journal = {arXiv preprint arXiv: 2512.24867}
 }`
 
 const copyBibtex = async () => {
@@ -57,20 +54,6 @@ const copyBibtex = async () => {
         <pre class="bibtex-code"><code>{{ bibtex }}</code></pre>
       </NCard>
 
-      <div class="paper-links">
-        <a href="#" class="paper-link" target="_blank" rel="noopener">
-          <span class="link-icon">📄</span>
-          <span class="link-text">Read the Paper</span>
-        </a>
-        <a href="#" class="paper-link" target="_blank" rel="noopener">
-          <span class="link-icon">🤗</span>
-          <span class="link-text">Dataset on HuggingFace</span>
-        </a>
-        <a href="#" class="paper-link" target="_blank" rel="noopener">
-          <span class="link-icon">💻</span>
-          <span class="link-text">GitHub Repository</span>
-        </a>
-      </div>
     </div>
   </section>
 </template>
@@ -132,38 +115,5 @@ const copyBibtex = async () => {
   word-break: break-word;
 }
 
-.paper-links {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.paper-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 28px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-normal);
-}
-
-.paper-link:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--border-highlight);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
-}
-
-.link-icon {
-  font-size: 1.5rem;
-}
-
-.link-text {
-  font-weight: 500;
-  color: var(--text-primary);
-}
 </style>
 
