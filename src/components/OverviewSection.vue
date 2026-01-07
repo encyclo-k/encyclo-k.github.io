@@ -111,6 +111,11 @@ const disciplineData = [
           to statement ratios: Science has the most questions (1,242, 24.7%), while Philosophy has the fewest (61, 1.2%). 
           Each question contains <strong>8–10 statements</strong>, <strong>4–8 options</strong>, and <strong>2–4 combinations</strong>.
         </p>
+        <br>
+        <p>
+          In the statement embedding space, knowledge points from different disciplines exhibit a relatively mixed distribution with blurred disciplinary boundaries, reflecting the cross-disciplinary commonality and interconnectedness of basic knowledge units. In contrast, when multiple statements are combined into complete questions, disciplinary characteristics are significantly amplified—each discipline forms relatively independent semantic clusters with distinct boundaries. The density of domain-specific terminology, reasoning patterns, and knowledge organization methods work together to form distinguishable distribution patterns in high-dimensional semantic space. By combining multiple knowledge statements to construct questions, we successfully aggregate and strengthen disciplinary characteristics, enabling questions in the dataset to possess clear disciplinary differentiation.
+
+        </p>
       </div>
 
     </div>
@@ -308,6 +313,10 @@ const disciplineData = [
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .overview-description strong {

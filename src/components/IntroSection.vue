@@ -42,13 +42,15 @@ const features = [
       
       <div class="intro-content">
         <p class="intro-text">
-          <strong>Encyclo-K</strong> is a statement-based benchmark that rethinks benchmark construction from the ground up. 
-          Our key observation is that the question itself need not be the atomic unit of curation—<em>individual knowledge statements can be</em>.
+          <!-- <strong>Encyclo-K</strong> is a statement-based benchmark that rethinks benchmark construction from the ground up. 
+          Our key observation is that the question itself need not be the atomic unit of curation—<em>individual knowledge statements can be</em>. -->
+          Existing benchmarks curate evaluation data at the question level—collecting questions from textbooks or websites. This paradigm suffers from three key limitations: vulnerability to data contamination, restriction to single-concept assessment, and reliance on costly domain expert annotation. We introduce <strong>Encyclo-K</strong>, which rethinks benchmark construction from the ground up. <em>Our key insight is that knowledge statements, not questions, can serve as the unit of curation, and questions can then be constructed from them</em>.
         </p>
         
         <p class="intro-text">
-          We extract standalone knowledge statements from authoritative textbooks and dynamically compose them into evaluation questions 
-          through random sampling at test time. The combinatorial space is too vast to memorize, enabling reliable periodic dataset refresh.
+          <!-- We extract standalone knowledge statements from authoritative textbooks and dynamically compose them into evaluation questions 
+          through random sampling at test time. The combinatorial space is too vast to memorize, enabling reliable periodic dataset refresh. -->
+          We compose statements into questions via random sampling, yielding two key properties: (1) Dynamic—the combinatorial space is too vast to memorize, with experiments across multiple random seeds confirming stable model rankings; (2) Multi-statement—each question requires joint comprehension of multiple statements, posing greater challenges than single-concept questions.
         </p>
       </div>
 
@@ -61,7 +63,7 @@ const features = [
               <NIcon :component="feature.icon" :size="32" />
             </div>
             <h4 class="feature-title">{{ feature.title }}</h4>
-            <p class="feature-desc">{{ feature.description }}</p>
+            <p class="feature-desc" lang="en">{{ feature.description }}</p>
           </NCard>
         </NGridItem>
       </NGrid>
@@ -85,6 +87,10 @@ const features = [
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 20px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
 .intro-text strong {
@@ -155,7 +161,8 @@ const features = [
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-muted);
-  text-align: left;
+  text-align-last: left;
+  word-spacing: 0.5px;
   flex: 1;
 }
 </style>

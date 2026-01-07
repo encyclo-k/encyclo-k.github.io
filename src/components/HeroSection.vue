@@ -3,19 +3,19 @@ import { NButton, NSpace, NIcon } from 'naive-ui'
 import { 
   DocumentText, 
   Trophy, 
-  Cloud 
+  LogoGithub 
 } from '@vicons/ionicons5'
 
 const links = [
   { 
     label: 'Code', 
-    icon: Cloud, 
+    icon: LogoGithub, 
     url: 'https://github.com/multimodal-art-projection/Encyclo-K',
     type: 'default'
   },
   { 
     label: 'Dataset', 
-    icon: Cloud, 
+    img: '/huggingface_logo.svg',
     url: 'https://huggingface.co/datasets/m-a-p/Encyclo-K',
     type: 'default'
   },
@@ -53,7 +53,7 @@ const organizations = [
       <h1 class="hero-title fade-in-up">
         <span class="title-accent">Encyclo-K</span>
         <span class="title-separator">:</span>
-        <span class="title-main">Dynamic Evaluation of LLMs' Comprehensive Understanding over Multiple Knowledge Statements</span>
+        <span class="title-main">Evaluating LLMs with Dynamically Composed Knowledge Statements</span>
       </h1>
 
       <!-- Organizations -->
@@ -86,7 +86,8 @@ const organizations = [
             class="hero-btn"
           >
             <template #icon>
-              <NIcon :component="link.icon" />
+              <img v-if="link.img" :src="link.img" class="btn-icon-img" />
+              <NIcon v-else :component="link.icon" />
             </template>
             {{ link.label }}
           </NButton>
@@ -269,6 +270,12 @@ const organizations = [
 
 .hero-btn:deep(.n-button__content) {
   gap: 8px;
+}
+
+.btn-icon-img {
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
 }
 
 /* Stats */
